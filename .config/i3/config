@@ -1,0 +1,203 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+# Modifier
+set $mod Mod4
+
+# Font
+font pango:DejaVu Sans Mono 10
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# general properties
+title_align center
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders smart
+focus_follows_mouse yes
+mouse_warping output
+workspace_auto_back_and_forth yes
+
+# gaps
+# smart_gaps on
+gaps inner 5
+gaps outer 0
+bindsym $mod+minus gaps inner current minus 5
+bindsym $mod+plus gaps inner current plus 5
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id urxvt
+bindsym $mod+x exec --no-startup-id xfce4-terminal
+bindsym F11 exec --no-startup-id ~/.scripts/terminal.py ranger
+bindsym F12 exec --no-startup-id ~/.scripts/terminal.py tmux
+for_window [instance="floatingTmux"] floating enable
+for_window [instance="floatingRanger"] floating enable
+
+
+# start rofi
+bindsym $mod+d exec rofi -show drun
+
+# kill focused window
+bindsym $mod+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in vertical orientation
+bindsym $mod+g split toggle
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# Workspace Variables
+set $ws1 "1: Main"
+set $ws2 "2: Browser"
+set $ws3 "3: Code"
+set $ws4 "4: Docs"
+set $ws5 "5: Misc 1"
+set $ws6 "6: Misc 2"
+set $ws7 "7: Misc 3"
+set $ws8 "8: Mail"
+set $ws9 "9: Spotify"
+set $ws10 "10: Social"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# move focused container to workspace and focus workscape
+bindsym $mod+Mod1+1 move container to workspace number $ws1; workspace $ws1
+bindsym $mod+Mod1+2 move container to workspace number $ws2; workspace $ws2
+bindsym $mod+Mod1+3 move container to workspace number $ws3; workspace $ws3
+bindsym $mod+Mod1+4 move container to workspace number $ws4; workspace $ws4
+bindsym $mod+Mod1+5 move container to workspace number $ws5; workspace $ws5
+bindsym $mod+Mod1+6 move container to workspace number $ws6; workspace $ws6
+bindsym $mod+Mod1+7 move container to workspace number $ws7; workspace $ws7
+bindsym $mod+Mod1+8 move container to workspace number $ws8; workspace $ws8
+bindsym $mod+Mod1+9 move container to workspace number $ws9; workspace $ws9
+bindsym $mod+Mod1+0 move container to workspace number $ws10; workspace $ws10
+
+# workspace navigation
+bindsym $mod+Tab workspace prev
+bindsym $mod+BackSpace workspace next
+bindsym $mod+b workspace back_and_forth
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+       
+	 # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+# bar {
+#         status_command i3status
+#         tray_output primary
+#         strip_workspace_numbers yes
+# }
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Screenshot
+bindsym Print exec "xfce4-screenshooter -r"
+
+# Compton
+exec --no-startup-id compton --config ~/.config/compton/compton.conf
+
+# Run polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# PulseAudio applet
+exec --no-startup-id pasystray
+
+# NetworkManager applet
+exec --no-startup-id nm-applet
+
+# Blueman applet
+exec --no-startup-id blueman-applet
+
+# Dropbox clint
+exec --no-startup-id dropbox start
+
+# Caprine
+exec --no-startup-id caprine
+
+# Mailspring
+exec --no-startup-id mailspring -b
+
+# Redshift
+exec --no-startup-id redshift-gtk
+
+# Fix Trayer
+exec --no-startup-id "sleep 1; trayer & sleep 0.1; pkill trayer"
+
+
+
+

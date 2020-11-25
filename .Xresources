@@ -1,0 +1,13 @@
+! System colors
+
+
+! URxvt Appearence
+URxvt.background:	#000000
+URxvt.foreground:	#FFFFFF
+URxvt.font: 		xft:monospace:size=12
+URxvt.letterSpace: 	-1
+URxvt.scrollBar:	false
+URxvt.internalBorder: 15
+URxvt.cursorColor:  #FFFFFF
+URxvt.cursorBlink:	true
+URxvt.saveLines:    200000
