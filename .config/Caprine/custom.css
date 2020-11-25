@@ -1,0 +1,28 @@
+/*
+This is the custom styles file where you can add anything you want.
+The styles here will be injected into Caprine and will override default styles.
+If you want to disable styles but keep the config, just comment the lines that you don't want to be used.
+
+Here are some dark mode color variables to get you started.
+Edit them to change color scheme of Caprine.
+Press Command/Ctrl+R in Caprine to see your changes.
+*/
+
+:root {
+	--base: #000;
+	--base-ninety: rgba(255, 255, 255, 0.9); /* Minhas mensagens */
+	--base-seventy-five: rgba(0, 255, 0, 0.75); /* Nop */
+	--base-seventy: rgba(255, 255, 255, 0.9); /* Mensages e nomes na barra de lado */
+	--base-fifty: rgba(255, 255, 255, 0.5); /* Mensagens na barra de lado */
+	--base-fourty: rgba(255, 255, 255, 0.5); /* Nomes das pessoas */
+	--base-thirty: rgba(255, 255, 255, 0.3); /* Placeholders */
+	--base-twenty: rgba(255, 255, 255, 0.3); /* Horas */
+	--base-five: rgba(255, 255, 255, 0.05); /* Inactive Conversation */
+	--base-ten: rgba(255, 255, 255, 0.2); /* Baloes mensagens */
+	--base-nine: rgba(0, 255, 0, 0.09); /* Nop */
+	--container-color: #000000;
+	--container-dark-color: #1e1e1e;
+	--list-header-color: #222;
+	--blue: #0084ff;
+	--selected-conversation-background: linear-gradient(hsla(209, 110%, 45%, 0.9), hsla(209, 110%, 42%, 0.9));
+}
