@@ -116,9 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Cork Iris ROS Workspace
-# source '/home/fabio/Dropbox/Universidade/Bolsa/shared-ect/ros_ws/devel/setup.bash'
-
 # Go Instalation
 export PATH="$PATH:/home/fabio/Apps/go/bin"
 
@@ -127,3 +124,27 @@ export PATH="$PATH:/home/fabio/Apps/flutter/bin"
 
 # Scripts Folder
 export PATH="$PATH:/home/fabio/Scripts"
+
+# Custom PS1
+reset="\e[1;0m";
+black="\e[1;30m";
+blue="\e[1;34m";
+cyan="\e[1;36m";
+green="\e[1;32m";
+orange="\e[1;33m";
+purple="\e[1;35m";
+red="\e[1;31m";
+violet="\e[1;35m";
+white="\e[1;37m";
+yellow="\e[1;33m";
+
+PS1="\[${white}\]╔═ "
+PS1+="\[${green}\]\u"; # username
+PS1+="\[${white}\] at ";
+PS1+="\[${red}\]\h"; # host
+PS1+="\[${white}\] in ";
+PS1+="\[${blue}\]";
+PS1+='${PWD#${PWD%/*/*/*}/}'; # working directory
+PS1+="\[${white}\]\n║\n";
+PS1+="╚═> \$ \[${reset}\]"; # `$` (and reset color)
+export PS1;

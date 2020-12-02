@@ -11,7 +11,7 @@ alias sn='shutdown now'
 
 # ROS WS Aliases
 alias cork_ws='source /home/fabio/Dropbox/Universidade/Bolsa/shared-ect/ros_ws/devel/setup.bash'
-alias tese_ws='source /home/fabio/Dropbox/Universidade/5Ano/TESE/iris_ws/devel/setup.bash'
+alias tese_ws='source /home/fabio/Dropbox/Universidade/5Ano/TESE/HumanRobotColaboration/iris_ws/devel/setup.bash'
 
 # Files
 alias ll='ls -l --color=auto'
