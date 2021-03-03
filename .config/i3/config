@@ -37,7 +37,7 @@ for_window [instance="floatingRanger"] floating enable
 
 
 # start rofi
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -icon-theme "Papirus" -show-icons
 
 # kill focused window
 bindsym $mod+q kill
