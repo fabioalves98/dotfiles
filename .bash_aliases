@@ -15,8 +15,8 @@ alias tese_ws='source /home/fabio/Dropbox/Universidade/5Ano/TESE/HumanRobotColab
 alias rmi_ws='source /home/fabio/Dropbox/Universidade/5Ano/RMI/proj/proj2/ros_ws/devel/setup.bash'
 
 # Files
-alias ll='ls -l --color=auto'
-alias la='ls -Al --color=auto'
+alias ll='exa --long --header --group-directories-first'
+alias la='exa --all --long --header --group-directories-first'
 alias b='cd ..; ll'
 
 # Folders
