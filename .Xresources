@@ -11,3 +11,11 @@ URxvt.internalBorder: 15
 URxvt.cursorColor:  #FFFFFF
 URxvt.cursorBlink:	true
 URxvt.saveLines:    200000
+
+!Extensions
+URxvt.perl-ext-common: 		default, resize-font
+URxvt.keysym.C-Down:		resize-font:smaller
+URxvt.keysym.C-Up:	  	resize-font:bigger
+URxvt.keysym.C-space:     	resize-font:reset
+URxvt.keysym.C-question:  	resize-font:show
+
