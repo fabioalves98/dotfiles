@@ -4,7 +4,7 @@
 ! URxvt Appearence
 URxvt.background:	#000000
 URxvt.foreground:	#FFFFFF
-URxvt.font: 		xft:monospace:size=12
+URxvt.font: 		xft:SauceCodePro Nerd Font Mono:style=Medium:size=15
 URxvt.letterSpace: 	-1
 URxvt.scrollBar:	false
 URxvt.internalBorder: 15
