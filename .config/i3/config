@@ -197,9 +197,6 @@ exec --no-startup-id blueman-applet
 # Dropbox clint
 exec --no-startup-id dropbox start
 
-# Caprine
-exec --no-startup-id ferdi
-
 # Mailspring
 exec --no-startup-id mailspring -b
 
