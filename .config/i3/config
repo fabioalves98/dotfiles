@@ -182,9 +182,6 @@ bindsym Print exec "xfce4-screenshooter -r"
 # Compton
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
 
-# Run polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 # PulseAudio applet
 exec --no-startup-id pasystray
 
@@ -206,6 +203,5 @@ exec --no-startup-id redshift-gtk
 # Fix Trayer
 exec --no-startup-id "sleep 1; trayer & sleep 0.1; pkill trayer"
 
-
-
-
+# Run polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
