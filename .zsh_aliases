@@ -1,0 +1,69 @@
+# Dotfiles repo
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Shorcuts
+alias open='xdg-open'
+alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias size='du -sh'
+alias update='sudo apt update; apt list --upgradable'
+alias upgrade='sudo apt upgrade -y'
+alias sn='shutdown now'
+
+# ROS WS Aliases
+alias cork_ws='source /home/fabio/Dropbox/Universidade/Bolsa/iris_cork/ros_ws/devel/setup.zsh'
+alias tese_ws='source /home/fabio/Dropbox/Universidade/5Ano/TESE/HumanRobotColaboration/iris_ws/devel/setup.zsh'
+
+# Files
+alias ll='exa --long --header --group-directories-first'
+alias la='exa --all --long --header --group-directories-first'
+alias b='cd ..; ll'
+
+# Folders
+alias home='cd ~; ll'
+alias drop='cd ~/Dropbox/Universidade; ll'
+alias cork='cd ~/Dropbox/Universidade/Bolsa/iris_cork; ll'
+# 1 Ano
+alias alga='cd ~/Dropbox/Universidade/1Ano/ALGA; ll'
+alias c1='cd ~/Dropbox/Universidade/1Ano/C1; ll'
+alias c2='cd ~/Dropbox/Universidade/1Ano/C2; ll'
+alias isd='cd ~/Dropbox/Universidade/1Ano/ISD; ll'
+alias labi='cd ~/Dropbox/Universidade/1Ano/LABI; ll'
+alias lsd='cd ~/Dropbox/Universidade/1Ano/LSD; ll'
+alias md='cd ~/Dropbox/Universidade/1Ano/MD; ll'
+alias p1='cd ~/Dropbox/Universidade/1Ano/P1; ll'
+alias p2='cd ~/Dropbox/Universidade/1Ano/P2; ll'
+# 2 Ano
+alias ac1='cd ~/Dropbox/Universidade/2Ano/AC1; ll'
+alias ac2='cd ~/Dropbox/Universidade/2Ano/AC2; ll'
+alias algc='cd ~/Dropbox/Universidade/2Ano/ALGC; ll'
+alias lfa='cd ~/Dropbox/Universidade/2Ano/LFA; ll'
+alias mce='cd ~/Dropbox/Universidade/2Ano/MCE; ll'
+alias mpei='cd ~/Dropbox/Universidade/2Ano/MPEI; ll'
+alias p3='cd ~/Dropbox/Universidade/2Ano/P3; ll'
+alias se='cd ~/Dropbox/Universidade/2Ano/SE; ll'
+# 3 Ano
+alias ams='cd ~/Dropbox/Universidade/3Ano/AMS; ll'
+alias ar='cd ~/Dropbox/Universidade/3Ano/AR; ll'
+alias bd='cd ~/Dropbox/Universidade/3Ano/BD; ll'
+alias fr='cd ~/Dropbox/Universidade/3Ano/FR; ll'
+alias ihc='cd ~/Dropbox/Universidade/3Ano/IHC; ll'
+alias iia='cd ~/Dropbox/Universidade/3Ano/IIA; ll'
+alias pei='cd ~/Dropbox/Universidade/3Ano/PEI; ll'
+alias so='cd ~/Dropbox/Universidade/3Ano/SO; ll'
+# 4 Ano
+alias aa='cd ~/Dropbox/Universidade/4Ano/AA; ll'
+alias aca='cd ~/Dropbox/Universidade/4Ano/ACA; ll'
+alias ara='cd ~/Dropbox/Universidade/4Ano/ARA; ll'
+alias cr='cd ~/Dropbox/Universidade/4Ano/CR; ll'
+alias cv='cd ~/Dropbox/Universidade/4Ano/CV; ll'
+alias ddr='cd ~/Dropbox/Universidade/4Ano/DDR; ll'
+alias edc='cd ~/Dropbox/Universidade/4Ano/EDC; ll'
+alias es='cd ~/Dropbox/Universidade/4Ano/ES; ll'
+alias s='cd ~/Dropbox/Universidade/4Ano/S; ll'
+alias sd='cd ~/Dropbox/Universidade/4Ano/SD; ll'
+# 5 Ano
+alias serv='cd ~/Dropbox/Universidade/5Ano/ES; ll'
+alias rmi='cd ~/Dropbox/Universidade/5Ano/RMI; ll'
+alias pse='cd ~/Dropbox/Universidade/5Ano/PSE; ll'
+alias gpe='cd ~/Dropbox/Universidade/5Ano/GPE; ll'
+alias tese='cd ~/Dropbox/Universidade/5Ano/TESE; ll'
