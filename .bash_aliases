@@ -8,11 +8,11 @@ alias size='du -sh'
 alias update='sudo apt update; apt list --upgradable'
 alias upgrade='sudo apt upgrade -y'
 alias sn='shutdown now'
+alias sname='xdotool getactivewindow set_window --name'
 
 # ROS WS Aliases
 alias cork_ws='source /home/fabio/Dropbox/Universidade/Bolsa/iris_cork/ros_ws/devel/setup.bash'
 alias tese_ws='source /home/fabio/Dropbox/Universidade/5Ano/TESE/HumanRobotColaboration/iris_ws/devel/setup.bash'
-alias rmi_ws='source /home/fabio/Dropbox/Universidade/5Ano/RMI/proj/proj2/ros_ws/devel/setup.bash'
 
 # Files
 alias ll='exa --long --header --group-directories-first'

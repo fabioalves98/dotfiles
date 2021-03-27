@@ -1,5 +1,4 @@
 # Set up the prompt
-
 autoload -Uz promptinit
 promptinit
 
@@ -42,11 +41,11 @@ fi
 
 # Define the theme
 prompt_mytheme_setup() {
-  PS1="%B╔═ %F{green}%n%f at %F{red}%m%f in %F{blue}%3~%f"
+  PS1="╔═ %B%F{green}%n%f at %F{red}%m%f in %F{blue}%3~%f%b"
   PS1+=$'\n'
   PS1+="║"
   PS1+=$'\n'
-  PS1+="╚═> %# %b"
+  PS1+="╚═%B> %# %b"
 }
 
 # Add the theme to promptsys

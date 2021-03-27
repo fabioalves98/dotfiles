@@ -1,6 +1,5 @@
 ! System colors
 
-
 ! URxvt Appearence
 URxvt.background:	#000000
 URxvt.foreground:	#FFFFFF
@@ -11,6 +10,7 @@ URxvt.internalBorder: 15
 URxvt.cursorColor:  #FFFFFF
 URxvt.cursorBlink:	true
 URxvt.saveLines:    200000
+
 
 !Extensions
 URxvt.perl-ext-common: 		default, resize-font
