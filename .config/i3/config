@@ -32,9 +32,11 @@ bindsym $mod+Return exec --no-startup-id ~/.cargo/bin/alacritty
 bindsym $mod+x exec --no-startup-id urxvt
 bindsym F11 exec --no-startup-id ~/.scripts/terminal.py ranger
 bindsym F12 exec --no-startup-id ~/.scripts/terminal.py tmux
-for_window [instance="floatingTmux"] floating enable
-for_window [instance="floatingRanger"] floating enable
 
+# Floating configurations
+for_window [instance="floating"] floating enable 
+floating_minimum_size 320 x 240
+floating_maximum_size 1280 x 720
 
 # start rofi
 bindsym $mod+d exec rofi -show drun -icon-theme "Papirus" -show-icons
