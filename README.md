@@ -6,6 +6,7 @@
 - compton
 - tmux
 - ranger
+ - ueberzug
 - rofi
 - urxvt
 - alacritty

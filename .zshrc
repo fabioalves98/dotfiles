@@ -39,6 +39,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.zsh_aliases
 fi
 
+# Jump in words
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 # Define the theme
 prompt_mytheme_setup() {
   PS1="╔═ %B%F{green}%n%f at %F{red}%m%f in %F{blue}%3~%f%b"

@@ -9,6 +9,7 @@ alias update='sudo apt update; apt list --upgradable'
 alias upgrade='sudo apt upgrade -y'
 alias sn='shutdown now'
 alias sname='xdotool getactivewindow set_window --name'
+alias wifi_metric='sudo ifmetric wlp3s0 50'
 
 # ROS WS Aliases
 alias cork_ws='source /home/fabio/Dropbox/Universidade/Bolsa/iris_cork/ros_ws/devel/setup.bash'
