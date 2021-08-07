@@ -116,15 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Go Instalation
-export PATH="$PATH:/home/fabio/Apps/go/bin"
-
-# Flutter Instalation
-export PATH="$PATH:/home/fabio/Apps/flutter/bin"
-
-# Scripts Folder
-export PATH="$PATH:/home/fabio/Scripts"
-
 # Custom PS1
 reset="\e[1;0m";
 black="\e[1;30m";

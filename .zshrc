@@ -39,6 +39,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.zsh_aliases
 fi
 
+# Add Cargo to Path
+export PATH="$PATH:/home/fabio/.cargo/bin/"
+
 # Jump in words
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
