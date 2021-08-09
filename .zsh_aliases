@@ -13,7 +13,7 @@ alias wifi_metric='sudo ifmetric wlp3s0 50'
 
 # ROS WS Aliases
 alias cork_ws='source /home/fabio/Dropbox/Universidade/Bolsa/iris_cork/ros_ws/devel/setup.zsh'
-alias tese_ws='source /home/fabio/Dropbox/Universidade/5Ano/TESE/HumanRobotColaboration/iris_ws/devel/setup.zsh'
+alias tese_ws='source /home/fabio/Dropbox/Universidade/5Ano/TESE/HumanRobotColaboration/ros_ws/devel/setup.zsh'
 
 # Files
 alias ll='exa --long --header --group-directories-first'
