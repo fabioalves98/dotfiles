@@ -7,13 +7,22 @@ alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd
 alias size='du -sh'
 alias update='sudo apt update; apt list --upgradable'
 alias upgrade='sudo apt upgrade -y'
+alias fprint='less -FX'
+alias wall='feh --bg-scale Pictures/wallpaper.jpg'
 alias sn='shutdown now'
 alias sname='xdotool getactivewindow set_window --name'
 alias wifi_metric='sudo ifmetric wlp3s0 50'
+alias monitor='/home/fabio/Dropbox/Universidade/Scripts/monitor.sh'
+
+# Network
+alias plexpi='sshfs pi@plexpi.local:/home/pi /home/fabio/plexpi -o follow_symlinks'
 
 # ROS WS Aliases
 alias cork_ws='source /home/fabio/Dropbox/Universidade/Bolsa/iris_cork/ros_ws/devel/setup.zsh'
 alias tese_ws='source /home/fabio/Dropbox/Universidade/5Ano/TESE/HumanRobotColaboration/ros_ws/devel/setup.zsh'
+
+# Flatpak Apps
+alias evince='org.gnome.Evince'
 
 # Files
 alias ll='exa --long --header --group-directories-first'

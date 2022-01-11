@@ -2,7 +2,7 @@
 autoload -Uz promptinit
 promptinit
 
-setopt histignorealldups sharehistory
+setopt histignorealldups no_share_history
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -41,6 +41,9 @@ fi
 
 # Add Cargo to Path
 export PATH="$PATH:/home/fabio/.cargo/bin/"
+
+# Add flatpaks to Path
+export PATH="$PATH:/var/lib/flatpak/exports/bin"
 
 # Jump in words
 bindkey "^[[1;5C" forward-word

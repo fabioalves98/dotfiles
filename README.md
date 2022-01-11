@@ -7,6 +7,7 @@
     * arc-theme
 * polybar
     * zscroll
+    * playerctl
 * compton
 * tmux
     * manually install extensions
