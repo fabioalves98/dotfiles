@@ -13,22 +13,18 @@ floating_modifier $mod
 
 # general properties
 title_align center
-default_border pixel 3
-default_floating_border pixel 1
 hide_edge_borders smart
 focus_follows_mouse yes
 mouse_warping output
 workspace_auto_back_and_forth yes
 
 # gaps
-# smart_gaps on
 gaps inner 5
-gaps outer 0
 bindsym $mod+minus gaps inner current minus 5
 bindsym $mod+plus gaps inner current plus 5
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id ~/.cargo/bin/alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+x exec --no-startup-id urxvt
 bindsym F11 exec --no-startup-id ~/.scripts/terminal.py ranger
 bindsym F12 exec --no-startup-id ~/.scripts/terminal.py tmux
@@ -39,7 +35,8 @@ floating_minimum_size 320 x 240
 floating_maximum_size 1280 x 720
 
 # start rofi
-bindsym $mod+d exec rofi -show drun -icon-theme "Papirus" -show-icons
+# bindsym $mod+d exec rofi -show drun -icon-theme "Papirus" -show-icons
+bindsym $mod+d exec rofi -show drun -show-icons
 
 # kill focused window
 bindsym $mod+q kill
@@ -66,6 +63,12 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+
+# borders
+bindsym $mod+Shift+t border toggle
+for_window [all] border pixel 3
+for_window [floating] border pixel 1
+for_window [class="stalonetray"] border none
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -143,6 +146,21 @@ bindsym $mod+Tab workspace prev
 bindsym $mod+BackSpace workspace next
 bindsym $mod+b workspace back_and_forth
 
+# Main monitor
+set $monitor_center eDP-1-1
+# Home monior setup
+set $monitor_up DP-1-1
+# CTW monitor setup
+set $monitor_left DP-1-1-8
+set $monitor_right DP-1-1-1-8
+# Monitor Navigation
+bindsym $mod+Shift+Up    move workspace to output $monitor_up
+bindsym $mod+Shift+Down  move workspace to output $monitor_center
+bindsym $mod+Shift+Left  move workspace to output $monitor_left
+bindsym $mod+Shift+Right move workspace to output $monitor_right
+
+# locks i3
+bindsym $mod+Mod1+l exec --no-startup-id i3lock-fancy-dualmonitor
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -176,7 +194,7 @@ bindsym $mod+r mode "resize"
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #ff0000 #ff0000 #ffffff #2e9ef4   #ff0000
+client.focused          #000078 #000078 #ffffff #2e9ef4   #000078
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -185,41 +203,45 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute   @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute        exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# Screenshot
-bindsym Print exec --no-startup-id "xfce4-screenshooter"
+# Use brightnessctl to adjust screen brightness
+bindsym XF86MonBrightnessUp     exec --no-startup-id brightnessctl -d "intel_backlight" set +10%
+bindsym XF86MonBrightnessDown   exec --no-startup-id brightnessctl -d "intel_backlight" set 10%-
 
-# PulseAudio applet
+
+# # Screenshot
+bindsym Print exec --no-startup-id gnome-screenshot -i
+
+exec --no-startup-id picom -b
+
+# # PulseAudio applet
 exec --no-startup-id pasystray
 
-# NetworkManager applet
+# # NetworkManager applet
 exec --no-startup-id nm-applet
 
-# Blueman applet
+# # Blueman applet
 exec --no-startup-id blueman-applet
 
-# Dropbox clint
-exec --no-startup-id dropbox start
+# # Maestral clint
+exec --no-startup-id maestral gui
 
-# Mailspring
-exec --no-startup-id mailspring -b
+# Set Keyboard layout
+exec --no-startup-id setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
 
-# Redshift
-exec --no-startup-id redshift-gtk
+# Enable touchpad click
+# exec --no-startup-id xinput set-prop 14 368 1
 
-# Fix Trayer
-exec --no-startup-id "sleep 1; trayer & sleep 0.1; pkill trayer"
+# # Compton
+# exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 
-# Compton
-exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
-
-# Run polybar
+# # Run polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-# Run wallpaper
+# # Run wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+

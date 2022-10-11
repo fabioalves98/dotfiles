@@ -27,8 +27,8 @@ for container in tree:
         create=False
 
 if create:
-    i3.command(f'exec --no-startup-id ~/.cargo/bin/alacritty --class {instance} -e zsh -i -c "{command}"')
-    time.sleep(0.1)
+    i3.command(f'exec --no-startup-id alacritty --class {instance} -e zsh -i -c "{command}"')
+    time.sleep(0.3)
     i3.command(f'[instance="{instance}"] resize set {resolution}')
     i3.command(f'[instance="{instance}"] move position center')
 

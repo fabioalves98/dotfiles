@@ -1,0 +1,7 @@
+[user]
+	email = fabiomcalves98@gmail.com
+	name = Fábio Alves
+[core]
+	editor = vim
+	pager = less -F
+	excludefile = /home/fabio/.gitignore
