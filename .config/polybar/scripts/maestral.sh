@@ -5,6 +5,6 @@ case "$1" in
         pgrep -x dropbox >/dev/null && pkill -f dropbox || dropbox start
         ;;
     *)
-        echo " $(dropbox status)"
+        echo " $(maestral status | grep Status | awk -F "Status: +"  '{print $2}')"
         ;;
 esac

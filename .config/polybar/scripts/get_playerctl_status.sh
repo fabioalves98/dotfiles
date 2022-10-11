@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STATUS=$(playerctl --player=playerctld status 2>/dev/null)
+STATUS=$(playerctl -p spotify status 2>/dev/null)
 EXIT_CODE=$?
 
 if [ $EXIT_CODE -eq 0 ]; then

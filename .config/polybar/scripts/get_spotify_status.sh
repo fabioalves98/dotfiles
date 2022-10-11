@@ -12,7 +12,7 @@ elif [ "$STATUS" = "Paused"  ]; then
     polybar-msg -p "$(pgrep -f "polybar main")" hook pause 2 1>/dev/null 2>&1
     polybar-msg -p "$(pgrep -f "polybar main")" hook prev 1 1>/dev/null 2>&1
     polybar-msg -p "$(pgrep -f "polybar main")" hook next 1 1>/dev/null 2>&1
-    playerctl --player=playerctld metadata --format " {{ title }} - {{ artist }} "
+    playerctl -p spotify metadata --format " {{ title }} - {{ artist }} "
 elif [ "$STATUS" = "No player is running"  ]; then
     echo ""
     polybar-msg -p "$(pgrep -f "polybar main")" hook pause 3 1>/dev/null 2>&1
@@ -22,5 +22,5 @@ else
     polybar-msg -p "$(pgrep -f "polybar main")" hook pause 1 1>/dev/null 2>&1
     polybar-msg -p "$(pgrep -f "polybar main")" hook prev 1 1>/dev/null 2>&1
     polybar-msg -p "$(pgrep -f "polybar main")" hook next 1 1>/dev/null 2>&1
-    playerctl --player=playerctld metadata --format " {{ title }} - {{ artist }} "
+    playerctl -p spotify metadata --format " {{ title }} - {{ artist }} "
 fi
