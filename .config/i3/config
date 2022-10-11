@@ -216,6 +216,7 @@ bindsym XF86MonBrightnessDown   exec --no-startup-id brightnessctl -d "intel_bac
 # # Screenshot
 bindsym Print exec --no-startup-id gnome-screenshot -i
 
+# Compositor
 exec --no-startup-id picom -b
 
 # # PulseAudio applet
@@ -235,9 +236,6 @@ exec --no-startup-id setxkbmap -rules evdev -model evdev -layout us -variant alt
 
 # Enable touchpad click
 # exec --no-startup-id xinput set-prop 14 368 1
-
-# # Compton
-# exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 
 # # Run polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh

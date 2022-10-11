@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/usr/share/oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -73,6 +73,10 @@ ZSH_THEME="fmca"
 plugins=(
     git
     git-prompt
+    git-auto-fetch
+    python-prompt
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,7 +112,17 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 
-# Colors in less
+# Plugin configurations
+# zsh-autosuggestions
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# git-auto-fetch
+GIT_AUTO_FETCH_INTERVAL=600
+
+# python-prompt
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# Colors in less (man pages)
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
@@ -116,9 +130,3 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
-
-# APINEXT PROJECT
-export PYTHONPATH="$PYTHONPATH:$HOME/apinext/docker-aosp-build/"
-export APINEXT_VERBOSE=true
-export REPO_IGNORE_SSH_INFO=1
-export AWS_DEFAULT_PROFILE=idc

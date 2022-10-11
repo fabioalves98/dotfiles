@@ -46,8 +46,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 10
-    y: 10
+    x: 7
+    y: 7
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
@@ -150,7 +150,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 8.0
+  size: 7.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -175,12 +175,41 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night)
+# Colors (Tomorrow Night Bright)
 colors:
   # Default colors
   primary:
-   background: '#000000'
-   foreground: '#FFFFFF'
+    background: '0x000000'
+    foreground: '0xeaeaea'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xd54e53'
+    green:   '0xb9ca4a'
+    yellow:  '0xe6c547'
+    blue:    '0x7aa6da'
+    magenta: '0xc397d8'
+    cyan:    '0x70c0ba'
+    white:   '0x424242'
+
+  # Bright colors
+  bright:
+    black:   '0x666666'
+    red:     '0xff3334'
+    green:   '0x9ec400'
+    yellow:  '0xe7c547'
+    blue:    '0x7aa6da'
+    magenta: '0xb77ee0'
+    cyan:    '0x54ced6'
+    white:   '0x2a2a2a'
+
+# Colors (Tomorrow Night)
+# colors:
+  # Default colors
+  # primary:
+  #  background: '#000000'
+  #  foreground: '#FFFFFF'
 
     # Bright and dim foreground colors
     #
@@ -249,26 +278,26 @@ colors:
   #  background: CellForeground
 
   # Normal colors
-  normal:
-   black:   '#222222'
-   red:     '#DD2222'
-   green:   '#22DD22'
-   yellow:  '#DDDD22'
-   blue:    '#2222DD'
-   magenta: '#DD22DD'
-   cyan:    '#22DDDD'
-   white:   '#DDDDDD'
+  # normal:
+  #  black:   '#222222'
+  #  red:     '#DD2222'
+  #  green:   '#22DD22'
+  #  yellow:  '#DDDD22'
+  #  blue:    '#2222DD'
+  #  magenta: '#DD22DD'
+  #  cyan:    '#22DDDD'
+  #  white:   '#DDDDDD'
 
   # Bright colors
-  bright:
-   black:   '#000000'
-   red:     '#FF0000'
-   green:   '#00FF00'
-   yellow:  '#FFFF00'
-   blue:    '#0000FF'
-   magenta: '#FF00FF'
-   cyan:    '#00FFFF'
-   white:   '#FFFFFF'
+  # bright:
+  #  black:   '#000000'
+  #  red:     '#FF0000'
+  #  green:   '#00FF00'
+  #  yellow:  '#FFFF00'
+  #  blue:    '#0000FF'
+  #  magenta: '#FF00FF'
+  #  cyan:    '#00FFFF'
+  #  white:   '#FFFFFF'
 
   # Dim colors
   #
@@ -386,7 +415,7 @@ cursor:
 
   # Thickness of the cursor relative to the cell width as floating point number
   # from `0.0` to `1.0`.
-  thickness: 0.15
+  thickness: 0.2
 
 # Live config reload (changes require restart)
 live_config_reload: true

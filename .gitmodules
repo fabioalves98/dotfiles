@@ -1,0 +1,12 @@
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://github.com/fabioalves98/ohmyzsh
+[submodule ".tmux/plugins/tmux-better-mouse-mode"]
+	path = .tmux/plugins/tmux-better-mouse-mode
+	url = https://github.com/NHDaly/tmux-better-mouse-mode
+[submodule ".tmux/plugins/tmux-sensible"]
+	path = .tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
