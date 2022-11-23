@@ -1,0 +1,11 @@
+# Global .gitignore file
+# Add to repo with
+# $ git config --global core.excludesfile ~/.gitignore_global
+
+# general
+fmca_*
+venv/
+.netrc
+
+# docker-aosp-build
+retries-host.log/

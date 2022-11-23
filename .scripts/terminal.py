@@ -23,7 +23,10 @@ elif argv[1] == 'ranger':
 create=True
 # See if exsists
 for container in tree:
+    print("class:" , container.window_class)
+    print("instance: ", container.window_instance)
     if container.window_instance == instance:
+        print("Already exists")
         create=False
 
 if create:

@@ -1,5 +1,5 @@
 # Dotfiles repo
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 
 # Shorcuts
 alias open='xdg-open'
@@ -12,9 +12,6 @@ alias wall='feh --bg-scale Pictures/wallpaper.png'
 alias sn='shutdown now'
 alias sname='xdotool getactivewindow set_window --name'
 alias wifi_metric='sudo ifmetric wlp3s0 50'
-
-# PlexPi
-alias plexpi_mount='sudo sshfs -o allow_other,default_permissions,follow_symlinks pi@plexpi:/home/pi /home/fabio/plexpi'
 
 # GNU Tools
 alias grep='grep --color=auto'
@@ -30,8 +27,8 @@ alias drop='cd ~/Dropbox/Universidade; ll'
 alias cork='cd ~/Dropbox/Universidade/Bolsa/iris_cork; ll'
 
 # APINEXT Project
-alias apinext='$HOME/apinext/docker-aosp-build/scripts/apinext.sh'
+alias apinext='$HOME/workspace/apinext/docker-aosp-build/scripts/apinext.sh'
 alias qa='docker run --rm -v "$PWD":/src -v "$HOME"/.netrc:/root/.netrc apinext.artifactory.cc.bmwgroup.net/apinext-docker/qa-tools'
 alias fmca_qa='$HOME/apinext/ctw01972-apinext/fmca_qa.sh'
 alias fmca_git='$HOME/apinext/ctw01972-apinext/fmca_git.sh'
-alias ctw_bs_mount='sudo sshfs -o allow_other,default_permissions,follow_symlinks ctw01972@build-idc_rse.bmw.criticaltechworks.com:/home/ctw01972 /home/fmcalves/ctw_build_server'
+alias ctw_bs_mount='sudo sshfs -o allow_other,follow_symlinks ctw01972@build-idc_rse.bmw.criticaltechworks.com:/home/ctw01972 /home/fmcalves/ctw_build_server'

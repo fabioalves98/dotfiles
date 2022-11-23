@@ -1,7 +1,11 @@
 [user]
-	email = fabiomcalves98@gmail.com
-	name = Fábio Alves
+	name = Fabio Alves
+	email = fabio.alves@ctw.bmwgroup.com
 [core]
+	excludesfile = /home/fmcalves/.gitignore_global
 	editor = vim
 	pager = less -F
-	excludefile = /home/fabio/.gitignore
+[safe]
+	directory = /home/fmcalves/ctw_build_server/docker-aosp-build
+[color]
+	ui = auto

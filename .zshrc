@@ -112,21 +112,37 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 
-# Plugin configurations
-# zsh-autosuggestions
+# precmd() {
+#   LEFT="The time is"
+#   RIGHT="$(date) "
+#   RIGHTWIDTH=$(($COLUMNS-${#LEFT}))
+#   print $LEFT${(l:$RIGHTWIDTH::.:)RIGHT}
+# }
+
+# ZSH Configurations
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-# git-auto-fetch
+# GIT CONFIGS
 GIT_AUTO_FETCH_INTERVAL=600
 
-# python-prompt
+# Disable VENV prompt
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# Colors in less (man pages)
-export LESS_TERMCAP_mb=$'\e[1;32m'
-export LESS_TERMCAP_md=$'\e[1;32m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;31m'
+# GOLANG BINARY
+export PATH=$PATH:/usr/local/go/bin
+
+# ANDROID DEVELOPMENT SETUP
+ANDROID_HOME="/home/$USER/Android/Sdk"
+export ANDROID_HOME
+PATH="$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
+
+# ARTIFACTORY CONFIGURATION
+export JFROG_CLI_TRANSITIVE_DOWNLOAD_EXPERIMENTAL=true
+
+# APINEXT PROJECT
+export PYTHONPATH="$PYTHONPATH:$HOME/apinext/docker-aosp-build/"
+export APINEXT_VERBOSE=true
+export REPO_IGNORE_SSH_INFO=1
+export AWS_DEFAULT_PROFILE=idc
+export APINEXT_ARTIFACTORY="https://apinext.artifactory.cc.bmwgroup.net/artifactory"
+export PIP_INDEX_URL="$APINEXT_ARTIFACTORY/api/pypi/codecraft-pypi-public/simple/"

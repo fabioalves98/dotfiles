@@ -13,13 +13,17 @@ floating_modifier $mod
 
 # general properties
 title_align center
+default_border pixel 3
+default_floating_border pixel 1
 hide_edge_borders smart
 focus_follows_mouse yes
-mouse_warping output
+mouse_warping none
 workspace_auto_back_and_forth yes
 
 # gaps
+# smart_gaps on
 gaps inner 5
+gaps outer 0
 bindsym $mod+minus gaps inner current minus 5
 bindsym $mod+plus gaps inner current plus 5
 
@@ -32,7 +36,16 @@ bindsym F12 exec --no-startup-id ~/.scripts/terminal.py tmux
 # Floating configurations
 for_window [instance="floating"] floating enable 
 floating_minimum_size 320 x 240
-floating_maximum_size 1280 x 720
+# floating_maximum_size 1280 x 720
+
+# Set specific apps to alwyas be floating
+for_window [instance="org.gnome.Nautilus"] floating enable
+for_window [instance="gnome-control-center"] floating enable
+for_window [instance="nm-connection-editor"] floating enable
+for_window [instance="pavucontrol"] floating enable
+for_window [instance="gnome-calculator"] floating enable
+for_window [instance="viewnior"] floating enable
+
 
 # start rofi
 # bindsym $mod+d exec rofi -show drun -icon-theme "Papirus" -show-icons
@@ -63,12 +76,6 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-
-# borders
-bindsym $mod+Shift+t border toggle
-for_window [all] border pixel 3
-for_window [floating] border pixel 1
-for_window [class="stalonetray"] border none
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -149,15 +156,27 @@ bindsym $mod+b workspace back_and_forth
 # Main monitor
 set $monitor_center eDP-1-1
 # Home monior setup
-set $monitor_up DP-1-1
-# CTW monitor setup
-set $monitor_left DP-1-1-8
-set $monitor_right DP-1-1-1-8
+# set $monitor_up DP-1-1
+# CTW wide monitor setup
+set $monitor_up DP-1-2-8
+# CTW dual monitor setup
+set $monitor_left DP-1-1-1-8
+set $monitor_right DP-1-1-8
+
 # Monitor Navigation
 bindsym $mod+Shift+Up    move workspace to output $monitor_up
 bindsym $mod+Shift+Down  move workspace to output $monitor_center
 bindsym $mod+Shift+Left  move workspace to output $monitor_left
 bindsym $mod+Shift+Right move workspace to output $monitor_right
+
+# Set specific apps to workspaces
+for_window [instance="microsoft teams - preview"] move --no-auto-back-and-forth container to workspace $ws4
+for_window [instance="spotify"] move --no-auto-back-and-forth container to workspace $ws9
+
+# Set specific workspaces to monitors
+workspace $ws4 output $monitor_center
+workspace $ws9 output $monitor_center
+workspace $ws10 output $monitor_center
 
 # locks i3
 bindsym $mod+Mod1+l exec --no-startup-id i3lock-fancy-dualmonitor
@@ -216,30 +235,37 @@ bindsym XF86MonBrightnessDown   exec --no-startup-id brightnessctl -d "intel_bac
 # # Screenshot
 bindsym Print exec --no-startup-id gnome-screenshot -i
 
-# Compositor
-exec --no-startup-id picom -b
-
 # # PulseAudio applet
-exec --no-startup-id pasystray
+# exec --no-startup-id pasystray
 
 # # NetworkManager applet
 exec --no-startup-id nm-applet
 
 # # Blueman applet
-exec --no-startup-id blueman-applet
+# exec --no-startup-id blueman-applet
 
-# # Maestral clint
-exec --no-startup-id maestral gui
+# # Dropbox clint
+# exec --no-startup-id dropbox start
 
-# Set Keyboard layout
-exec --no-startup-id setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
+# # Mailspring
+# exec --no-startup-id mailspring -b
+
+# # Redshift
+# exec --no-startup-id redshift-gtk
+
+
 
 # Enable touchpad click
 # exec --no-startup-id xinput set-prop 14 368 1
+
+# # Compton
+# exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
+
+# # Fix Trayer
+exec_always --no-startup-id sleep 1; trayer & sleep 0.1; pkill trayer
 
 # # Run polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # # Run wallpaper
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
