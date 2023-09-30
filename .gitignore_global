@@ -4,8 +4,13 @@
 
 # general
 fmca_*
-venv/
+*venv/
+.vscode/
 .netrc
+
+# build
+build/
+*.egg-info/
 
 # docker-aosp-build
 retries-host.log/

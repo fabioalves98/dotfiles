@@ -128,6 +128,15 @@ GIT_AUTO_FETCH_INTERVAL=600
 # Disable VENV prompt
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
+# Colors in less (man pages)
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
 # GOLANG BINARY
 export PATH=$PATH:/usr/local/go/bin
 
@@ -146,3 +155,6 @@ export REPO_IGNORE_SSH_INFO=1
 export AWS_DEFAULT_PROFILE=idc
 export APINEXT_ARTIFACTORY="https://apinext.artifactory.cc.bmwgroup.net/artifactory"
 export PIP_INDEX_URL="$APINEXT_ARTIFACTORY/api/pypi/codecraft-pypi-public/simple/"
+
+# node0
+export BS_VERBOSE=true

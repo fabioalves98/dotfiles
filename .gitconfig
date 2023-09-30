@@ -1,11 +1,15 @@
 [user]
-	name = Fabio Alves
+	name = Fábio Alves
 	email = fabio.alves@ctw.bmwgroup.com
 [core]
 	excludesfile = /home/fmcalves/.gitignore_global
-	editor = vim
+	editor = nvim
 	pager = less -F
 [safe]
 	directory = /home/fmcalves/ctw_build_server/docker-aosp-build
+	directory = /home/fmcalves/workspace/apinext/docker-aosp-build/test
 [color]
 	ui = auto
+[credential "https://cc-github.bmwgroup.net"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

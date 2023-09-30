@@ -2,6 +2,7 @@
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 
 # Shorcuts
+alias vim='nvim'
 alias open='xdg-open'
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias size='du -sh'
@@ -25,6 +26,18 @@ alias b='cd ..; ll'
 alias home='cd ~; ll'
 alias drop='cd ~/Dropbox/Universidade; ll'
 alias cork='cd ~/Dropbox/Universidade/Bolsa/iris_cork; ll'
+
+# CTW
+alias tu_approve='$HOME/workspace/fabioalves/techuser_PR_approve/techuser_PR_approve.sh'
+alias tu_clean='$HOME/workspace/fabioalves/techuser_PR_clean/techuser_PR_clean.py'
+
+# Machines
+alias ssh_bre1='ssh falves@ctw-bre-001.bmw.criticaltechworks.com'
+alias ssh_bre2='ssh falves@ctw-bre-002.bmw.criticaltechworks.com'
+alias ssh_bre3='ssh falves@ctw-bre-003.bmw.criticaltechworks.com'
+alias ssh_bmtg70='ssh tf_admin@tf-worker-bmt25-dev-001.bmw.criticaltechworks.com'
+alias ssh_bmt25='ssh tf_admin@tf-worker-bmt25-001.bmw.criticaltechworks.com'
+alias ssh_bmt25_dev='ssh ctw_admin@10.190.28.255'
 
 # APINEXT Project
 alias apinext='$HOME/workspace/apinext/docker-aosp-build/scripts/apinext.sh'

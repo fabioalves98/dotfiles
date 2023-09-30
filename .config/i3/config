@@ -155,13 +155,10 @@ bindsym $mod+b workspace back_and_forth
 
 # Main monitor
 set $monitor_center eDP-1-1
-# Home monior setup
-# set $monitor_up DP-1-1
+# DP monitor setup
+set $monitor_left DP-1-1
 # CTW wide monitor setup
 set $monitor_up DP-1-2-8
-# CTW dual monitor setup
-set $monitor_left DP-1-1-1-8
-set $monitor_right DP-1-1-8
 
 # Monitor Navigation
 bindsym $mod+Shift+Up    move workspace to output $monitor_up
@@ -170,16 +167,19 @@ bindsym $mod+Shift+Left  move workspace to output $monitor_left
 bindsym $mod+Shift+Right move workspace to output $monitor_right
 
 # Set specific apps to workspaces
-for_window [instance="microsoft teams - preview"] move --no-auto-back-and-forth container to workspace $ws4
+for_window [instance="code"] move --no-auto-back-and-forth container to workspace $ws3
 for_window [instance="spotify"] move --no-auto-back-and-forth container to workspace $ws9
 
 # Set specific workspaces to monitors
-workspace $ws4 output $monitor_center
+workspace $ws1 output $monitor_center
+workspace $ws2 output $monitor_up
+workspace $ws3 output $monitor_up
+workspace $ws4 output $monitor_left
 workspace $ws9 output $monitor_center
 workspace $ws10 output $monitor_center
 
 # locks i3
-bindsym $mod+Mod1+l exec --no-startup-id i3lock-fancy-dualmonitor
+bindsym $mod+Mod1+l exec --no-startup-id ~/.scripts/lock_screen.sh
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -235,6 +235,9 @@ bindsym XF86MonBrightnessDown   exec --no-startup-id brightnessctl -d "intel_bac
 # # Screenshot
 bindsym Print exec --no-startup-id gnome-screenshot -i
 
+# # polkit authentication agent
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
 # # PulseAudio applet
 # exec --no-startup-id pasystray
 
@@ -253,8 +256,6 @@ exec --no-startup-id nm-applet
 # # Redshift
 # exec --no-startup-id redshift-gtk
 
-
-
 # Enable touchpad click
 # exec --no-startup-id xinput set-prop 14 368 1
 
@@ -268,4 +269,4 @@ exec_always --no-startup-id sleep 1; trayer & sleep 0.1; pkill trayer
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # # Run wallpaper
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
